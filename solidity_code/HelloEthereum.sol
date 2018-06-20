@@ -1,4 +1,4 @@
-pragma solidity ^0.4.18;
+pragma solidity ^0.4.23;
 
 contract HelloEthereum {
     // the first example of comment
@@ -11,7 +11,7 @@ contract HelloEthereum {
     uint8 public counter;
 
     // contructor
-    function HelloEthereum(string _msg1) public{
+    constructor(string _msg1) public{
         // setting _msg1 on msg1
         msg1 = _msg1;
 
@@ -33,7 +33,7 @@ contract HelloEthereum {
     }
 
     // the getter of msg2
-    function getMsg2() constant public returns(string) {
+    function getMsg2() view public returns(string) {
         return msg2;
     }
 

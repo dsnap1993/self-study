@@ -1,4 +1,4 @@
-pragma solidity ^0.4.18;
+pragma solidity ^0.4.23;
 
 contract CrowdFunding {
     // investor
@@ -22,7 +22,7 @@ contract CrowdFunding {
     }
 
     // constructor
-    function CrowdFunding(uint _duration, uint _goalAmount) public{
+    constructor(uint _duration, uint _goalAmount) public{
         owner = msg.sender;
 
         // set the deadline on UnixTime

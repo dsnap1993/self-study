@@ -1,4 +1,4 @@
-pragma solidity ^0.4.18;
+pragma solidity ^0.4.23;
 
 contract CircuitBreaker {
     bool public stopped; // Circuit Breaker runs if true
@@ -17,7 +17,7 @@ contract CircuitBreaker {
     }
 
     // constructor
-    function CircuitBreaker() public {
+    constructor() public {
         owner = msg.sender;
         stopped = false;
     }

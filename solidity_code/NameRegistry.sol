@@ -1,4 +1,4 @@
-pragma solidity ^0.4.18;
+pragma solidity ^0.4.23;
 
 contract NameRegistry {
     // the structure for contract
@@ -15,7 +15,7 @@ contract NameRegistry {
     mapping(bytes32 => Contract) public contracts;
 
     // the constructor
-    function NameRegistry () public{
+    constructor() public{
         numContracts = 0;
     }
 

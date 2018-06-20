@@ -1,4 +1,4 @@
-pragma solidity ^0.4.18;
+pragma solidity ^0.4.23;
 
 contract Auction {
     address public highestBidder; // the address of highest bidder

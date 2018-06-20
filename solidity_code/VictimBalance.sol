@@ -1,4 +1,4 @@
-pragma solidity ^0.4.18;
+pragma solidity ^0.4.23;
 
 contract VictimBalance {
     // register the balance by the address
@@ -11,7 +11,7 @@ contract VictimBalance {
     event BalanceLog(uint);
 
     // constructor
-    function VictimBalance() public {
+    constructor() public {
     }
 
     // the function which called when sending the ether
@@ -21,12 +21,12 @@ contract VictimBalance {
 
     // the function which called when withdrawing the ether
     function withdrawBalance() public payable returns(bool) {
-        MessageLog("withdrawBalance has started");
-        BalanceLog(this.balance);
+        emit MessageLog("withdrawBalance has started");
+        emit BalanceLog(this.balance);
 
         // I. check the balance
         if (userBalances[msg.sender] == 0) {
-            MessageLog("No Balance.");
+            emit MessageLog("No Balance.");
             return false;
         }
 
@@ -36,7 +36,7 @@ contract VictimBalance {
         // III. update the balance
         userBalances[msg.sender] = 0;
 
-        MessageLog("withdrawBalance has finished");
+        emit MessageLog("withdrawBalance has finished");
 
         return true;
     }
