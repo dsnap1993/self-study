@@ -10,6 +10,8 @@ contract VictimBalance {
     // the event for showing the balance
     event BalanceLog(uint);
 
+    uint public amount;
+
     // constructor
     constructor() public {
     }
@@ -20,21 +22,25 @@ contract VictimBalance {
     }
 
     // the function which called when withdrawing the ether
-    function withdrawBalance() public payable returns(bool) {
+    function withdrawBalance(address _sender) public payable returns(bool) {
         emit MessageLog("withdrawBalance has started");
         emit BalanceLog(this.balance);
 
         // I. check the balance
-        if (userBalances[msg.sender] == 0) {
+        if (userBalances[_sender] == 0) {
             emit MessageLog("No Balance.");
             return false;
         }
 
         // II. refund to the caller
-        msg.sender.transfer(userBalances[msg.sender]);
+        // _sender.transfer(userBalances[_sender]);
+        amount = userBalances[_sender];
 
         // III. update the balance
-        userBalances[msg.sender] = 0;
+        userBalances[_sender] = 0;
+
+        // IV. refund to caller
+        _sender.transfer(amount);
 
         emit MessageLog("withdrawBalance has finished");
 
