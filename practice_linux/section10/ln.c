@@ -13,9 +13,9 @@ main(int argc, char *argv[])
     }
 
     if (link(argv[1], argv[2]) < 0) {
-        perror(argv[i]);
+        perror(argv[1]);
         exit(1);
     }
-    
+
     exit(0);
 }
