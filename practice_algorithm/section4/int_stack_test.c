@@ -15,7 +15,7 @@ main(void)
         int menu, x;
 
         printf("the number of datas: %d / %d\n", size(&s), capacity(&s));
-        printf("[1]Push [2]Pop [3]Peak [4]Print [0]Terminate: ");
+        printf("[1]Push [2]Pop [3]Peek [4]Print [0]Terminate: ");
         scanf("%d", &menu);
 
         if (menu == 0) break;
