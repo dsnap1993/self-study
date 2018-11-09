@@ -15,7 +15,7 @@ initialize(IntStack *s, int max)
 }
 
 int
-push(IntStack *s, int s)
+push(IntStack *s, int x)
 {
     if (s->ptr >= s->max) {
         return -1;
@@ -80,7 +80,7 @@ search(const IntStack *s, int x)
     int i;
 
     for (i = s->ptr - 1; i >= 0; i--) {
-        if (s->str[i] == x) {
+        if (s->stk[i] == x) {
             return i;
         }
     }
