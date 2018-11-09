@@ -1,6 +1,8 @@
 #ifndef ___ArrayIntQueue
 #define ___ArrayIntQueue
 
+#define FRONT 0
+
 typedef struct {
     int max;
     int num;

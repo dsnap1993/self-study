@@ -30,7 +30,7 @@ dequeue(ArrayIntQueue *q, int *x)
     if (q->num <= 0) {
         return -1;
     }
-    *x = q->que[0];
+    *x = q->que[FRONT];
     for (int i = 1; i < q->num; i++) {
         q->que[i - 1] = q->que[i];
     }
@@ -44,7 +44,7 @@ peek(ArrayIntQueue *q, int *x)
     if (q->num <= 0) {
         return -1;
     }
-    *x = q->que[0];
+    *x = q->que[FRONT];
     return 0;
 }
 
